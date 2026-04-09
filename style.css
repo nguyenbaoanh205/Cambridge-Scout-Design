@@ -93,9 +93,8 @@ ul {
 .btn-primary {
     background: var(--primary-navy);
     color: var(--white);
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-weight: 600;
+    padding: 5px 22px;
+    border-radius: 12px;
     display: inline-block;
     transition: background var(--transition-speed), transform 0.2s;
 }
@@ -181,12 +180,64 @@ ul {
 
 .nav-links a {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
 }
 
 .nav-links a:hover {
     color: var(--primary-navy);
 }
+
+.nav-links li {
+    position: relative;
+}
+
+/* Ẩn menu con */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* style item con */
+.dropdown li a {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+}
+
+/* hover hiện menu */
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* hover item */
+.dropdown li a:hover {
+    background: #f5f5f5;
+}
+
+.has-dropdown>a {
+    position: relative;
+}
+
+/* mũi tên */
+.has-dropdown>a::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+/* khi mở */
+.has-dropdown.open>a::after {
+    transform: rotate(180deg);
+}
+
 
 /* Mobile Menu Toggle */
 .menu-toggle {
@@ -508,11 +559,41 @@ ul {
         width: 100%;
         background: var(--white);
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
         padding: 30px;
         transition: left 0.3s ease-in-out;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        text-align: left;
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    /* ✅ FIX QUAN TRỌNG */
+    .dropdown {
+        position: static;
+        display: none;
+        background: #f9f9f9;
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+
+        padding-left: 15px;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
+    }
+
+    .dropdown li a {
+        padding: 12px 20px;
+        font-size: 14px;
     }
 
     .nav-links.active {
@@ -564,6 +645,14 @@ ul {
     .top-info span {
         display: none;
         /* Hide location on very small mobile for space */
+    }
+
+    .has-dropdown .dropdown {
+        display: none;
+    }
+
+    .has-dropdown.open .dropdown {
+        display: block;
     }
 }
 

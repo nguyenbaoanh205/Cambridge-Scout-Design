@@ -2,24 +2,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links li a');
+    const dropdownParents = document.querySelectorAll('.has-dropdown > a');
 
     // Toggle Mobile Menu
-    mobileMenu.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
 
-    // Close menu when clicking a link
+    // ✅ FIX: Không đóng menu khi click dropdown cha (mobile)
     navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            navLinks.classList.remove('active');
+        item.addEventListener('click', (e) => {
+            const parent = item.parentElement;
+
+            // Nếu là dropdown → không đóng menu
+            if (parent.classList.contains('has-dropdown') && window.innerWidth < 768) {
+                e.preventDefault();
+                // Đóng tất cả dropdown khác
+                document.querySelectorAll('.has-dropdown').forEach(i => {
+                    if (i !== parent) i.classList.remove('open');
+                });
+
+                // Toggle cái đang click
+                parent.classList.toggle('open');
+                return;
+            }
+
+            // Nếu là link bình thường → đóng menu
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         });
     });
 
-    // Handle Header Shadow on Scroll
+    // Header shadow khi scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.navbar');
+        if (!header) return;
+
         if (window.scrollY > 50) {
             header.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
         } else {
@@ -37,14 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling for Anchors
+    // ✅ FIX: Smooth scroll không phá dropdown
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+
+            if (targetId === '#' || this.parentElement.classList.contains('has-dropdown')) return;
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                e.preventDefault();
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
