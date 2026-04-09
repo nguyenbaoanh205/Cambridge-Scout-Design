@@ -397,48 +397,144 @@ ul {
 }
 
 /* Support Banner */
+/* ===== SECTION ===== */
 .support-banner {
-    background: linear-gradient(135deg, var(--primary-navy), var(--secondary-blue));
-    color: var(--white);
-    padding: 60px 0;
+    background: 
+        linear-gradient(rgb(2 32 151 / 80%), #1a37ae),
+        url('assets/images/Image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #fff;
+    padding: 80px 0;
 }
 
-.support-banner h2 {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+.support-banner-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     line-height: 1.4;
 }
 
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+/* ===== LAYOUT ===== */
+.support-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
+/* ===== CARD ===== */
 .support-card {
-    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 396px;
+    aspect-ratio: 396 / 415;
+    position: relative;
+}
+
+/* CARD GIỮA */
+.support-card--featured {
+    max-width: 430px;
+    aspect-ratio: 430 / 445;
+
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* SVG nền */
+.support-card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.support-card-content {
+    position: relative;
+    z-index: 2;
     padding: 30px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #1a37ae;
 }
 
-.support-card h3 {
+/* TITLE (icon + text) */
+.support-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.support-card-icon {
+    width: 87px;
+    height: 87px;
+    margin-right: 12px;
+}
+
+.support-card-heading {
+    margin: 0;
+    font-size: 2.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: left;
+}
+
+/* TEXT */
+.support-card-desc {
     margin-bottom: 20px;
-    font-size: 1.4rem;
+    text-align: left;
+    line-height: 1.6;
 }
 
-.support-card .btn-outline {
-    border-color: var(--white);
-    color: var(--white);
-    margin-top: 20px;
+/* BUTTON */
+.support-card-btn {
+    position: absolute;
+    right: 4px;
+    bottom: 5px;
+
+    background: #66feff;
+    color: #000;
+
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-weight: bold;
+    width: 40%;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.support-card-list li {
+    text-align: left;
+}
+/* HOVER */
+.support-card {
+    transition: 0.3s;
 }
 
-.support-card .btn-outline:hover {
-    background: var(--white);
-    color: var(--primary-navy);
+.support-card:hover {
+    transform: translateY(-5px);
 }
 
+.support-card--featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .support-cards {
+        flex-direction: column;
+    }
+
+    .support-card,
+    .support-card--featured {
+        max-width: 100%;
+        aspect-ratio: 396 / 415;
+        transform: none;
+    }
+}
 /* Teachers & Success Stories Grid (Carousel Simulation) */
 .grid-carousel {
     display: grid;
