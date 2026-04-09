@@ -708,6 +708,71 @@ ul {
     }
 }
 
+/* Image class */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+    gap: 10px;
+}
+
+/* ===== HÀNG 1 ===== */
+.item-1 {
+    grid-column: span 1;
+}
+
+.item-2 {
+    grid-column: span 2;
+}
+
+.item-3 {
+    grid-column: span 1;
+}
+
+/* ===== HÀNG 2 ===== */
+.item-4 {
+    grid-column: span 1;
+}
+
+.item-5 {
+    grid-column: span 1;
+}
+
+.item-6 {
+    grid-column: span 2;
+}
+
+/* ===== ITEM STYLE ===== */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* overlay text */
+.gallery-item span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+
 /* Footer */
 .main-footer {
     background: #001a33;
@@ -1216,7 +1281,6 @@ ul {
 
 .why-card.wide {
     grid-column: span 1.5;
-    /* Centering helper */
 }
 
 /* Helper for 3+2 grid */
