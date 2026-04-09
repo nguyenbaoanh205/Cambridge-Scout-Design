@@ -77,3 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1, // Mặc định mobile 1 ảnh
+    spaceBetween: 30,
+    loop: true, // Chạy vô tận
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        // Khi màn hình >= 768px (máy tính bảng)
+        768: {
+            slidesPerView: 3,
+        },
+        // Khi màn hình >= 1024px (máy tính)
+        1024: {
+            slidesPerView: 4,
+        },
+    },
+});

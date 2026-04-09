@@ -773,6 +773,56 @@ ul {
 }
 
 
+/* Gallery */
+.testimonial-section {
+  background-color: #0032AD;
+  padding: 60px 0;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px 0 50px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Bo góc ảnh cho đẹp */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Tùy chỉnh màu các nút điều hướng sang trắng cho nổi bật */
+.swiper-button-next, .swiper-button-prev {
+  color: #ffffff !important;
+}
+
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+} 
+
+.section-testimonial-title{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
 /* Footer */
 .main-footer {
     background: #001a33;
