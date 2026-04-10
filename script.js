@@ -137,3 +137,29 @@ var successSwiper = new Swiper(".successSwiper", {
         },
     },
 });
+
+const destinationSwiper = new Swiper(".destinationSwiper", {
+    loop: true,
+    speed: 800,
+    spaceBetween: 20,
+    slidesPerView: 4.3, // số lẻ để lòi item cuối
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.4
+      },
+      576: {
+        slidesPerView: 2.2
+      },
+      768: {
+        slidesPerView: 3.2
+      },
+      992: {
+        slidesPerView: 4.3
+      }
+    }
+  });
