@@ -338,11 +338,10 @@ ul {
 
 /* text */
 .card-content {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #fff;
-    z-index: 3;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    height: 100%;
 }
 
 .card-title-big {
@@ -540,8 +539,8 @@ ul {
     }
 }
 
-/* Teachers & Success Stories Grid (Carousel Simulation) */
-/* .grid-carousel {
+/* Success Stories Grid (Carousel Simulation) */
+.grid-carousel {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
@@ -551,7 +550,195 @@ ul {
 .success-item img {
     border-radius: 15px;
     width: 100%;
+}
+
+/* Layout Grid */
+/* .success-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
 } */
+
+.success-grid {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+
+/* Individual Card */
+.success-card {
+    width: 250px;
+    height: 420px;
+    flex-shrink: 0;
+    /* không bị co lại */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    scroll-snap-align: start;
+    /* snap từng card */
+}
+
+.student-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.student-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    /* tránh lỗi gap nhỏ dưới ảnh */
+}
+
+/* Top Header Section */
+.card-header {
+    padding: 25px 20px;
+    position: relative;
+    min-height: 120px;
+}
+
+.student-info h3 {
+    color: #1a37ae;
+    font-size: 2rem;
+    width: 50%;
+    padding-top: 13px;
+}
+
+.student-info p {
+    color: #1a37ae;
+    font-size: 0.85rem;
+}
+
+/* Floating Read More Button */
+.btn-read-more {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #1a37ae;
+    color: #ffffff;
+    padding: 8px 19px;
+    border-radius: 23px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Image Section */
+.card-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* SVG nên dùng contain */
+}
+
+/* Special Theme for the first card (Dark Blue) */
+.success-card.featured {
+    background: #003399;
+}
+
+.success-card.featured .student-info h3,
+.success-card.featured .student-info p {
+    color: #fff;
+}
+
+.success-card.featured .btn-read-more {
+    background: #00FBFF;
+    /* Cyan color from image */
+    color: #003399;
+}
+
+.success-item {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    /* Tùy chỉnh theo độ rộng card bạn muốn */
+    overflow: hidden;
+}
+
+.success-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Giữ nguyên tỷ lệ của file SVG */
+}
+
+.success-card:hover .card-image img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(98%) saturate(1800%) hue-rotate(210deg) brightness(90%) contrast(95%);
+}
+
+.success-card:hover .btn-read-more {
+    background: #66feff;
+    color: #000;
+}
+
+/* .card-image img,
+.btn-read-more {
+    transition: all 0.3s ease;
+} */
+
+.success-card:hover .student-info h3,
+.success-card:hover .student-info p {
+    color: #fff;
+}
+
+.success-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.success-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.successSwiper {
+    padding: 40px 0;
+}
+
+.successSwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.successSwiper .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* dot thường */
+.successSwiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #d1d5db !important;
+    /* xám nhẹ */
+    opacity: 1;
+    transition: 0.3s;
+}
+
+/* dot active */
+.successSwiper .swiper-pagination-bullet-active {
+    background: #1a37ae !important;
+    transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+    .successSwiper .swiper-pagination {
+    text-align: center;
+}
+}
 
 /* Contact Section */
 /* .contact-section {
@@ -775,54 +962,57 @@ ul {
 
 /* Gallery */
 .testimonial-section {
-  background-color: #0032AD;
-  padding: 60px 0;
-  color: #fff;
-  font-family: Arial, sans-serif;
+    background-color: #0032AD;
+    padding: 60px 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
 .section-title {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 40px;
-  text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .swiper {
-  width: 100%;
-  max-width: 100%;
-  padding: 20px 0 50px;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 0 50px;
 }
 
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-slide img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px; /* Bo góc ảnh cho đẹp */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* Bo góc ảnh cho đẹp */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Tùy chỉnh màu các nút điều hướng sang trắng cho nổi bật */
-.swiper-button-next, .swiper-button-prev {
-  color: #ffffff !important;
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff !important;
 }
 
 .swiper-pagination-bullet {
-  background: #ffffff !important;
-} 
+    background: #ffffff !important;
+}
 
-.section-testimonial-title{
+.section-testimonial-title {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
+
 /* Footer */
 .main-footer {
     background: #001a33;

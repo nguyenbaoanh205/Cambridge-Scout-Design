@@ -105,3 +105,35 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+
+var successSwiper = new Swiper(".successSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    speed: 700,
+
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+
+    pagination: {
+        el: ".successSwiper .swiper-pagination",
+        clickable: true,
+    },
+
+    navigation: false, // hoặc bỏ luôn cũng được
+
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        1024: {
+            slidesPerView: 5,
+        },
+    },
+});

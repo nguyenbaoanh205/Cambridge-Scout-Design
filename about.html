@@ -25,24 +25,41 @@
         <div class="top-bar">
             <div class="container flex-between">
                 <div class="top-info">
-                    <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="mailto:admin@cambridgescout.com" class="contact-info">
-                        <i class="fas fa-envelope"></i> admin@cambridgescout.com
+
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" class="social-icon">
+                        <img src="./assets/svg/SVG.svg" alt="Facebook" width="20" height="20">
                     </a>
-                    <span class="location">
-                        <i class="fas fa-map-marker-alt"></i> Hà Nội - Hồ Chí Minh
+
+                    <!-- Email -->
+                    <a href="mailto:admin@cambridgescout.com" class="contact-info">
+                        <img src="./assets/svg/SVG_3.svg" alt="Email" width="20" height="20">
+                    </a>
+
+                    <!-- Phone -->
+                    <span class="phone">
+                        <img src="./assets/svg/SVG_2.svg" alt="Phone" width="20" height="20">
+                        0123 456 789
                     </span>
+
+                    <!-- Address -->
+                    <span class="location">
+                        <img src="./assets/svg/SVG_1.svg" alt="Location" width="20" height="20">
+                        Hồ Chí Minh
+                    </span>
+
                 </div>
                 <div class="top-search">
                     <input type="text" placeholder="Tìm kiếm...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <button type="submit"><img src="https://img.icons8.com/ios-filled/16/333333/search--v1.png"
+                            alt="Search"></button>
                 </div>
             </div>
         </div>
         <nav class="navbar">
             <div class="container flex-between">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="#">
                         <img src="assets/images/Về Cambridge Scout.png" alt="Cambridge Scout Logo" class="brand-logo">
                     </a>
                 </div>
@@ -54,14 +71,36 @@
                 </div>
 
                 <ul class="nav-links">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="ve-cambridge-scout.html" class="active">Về chúng tôi</a></li>
-                    <li><a href="index.html#a-level">A-Level</a></li>
-                    <li><a href="index.html#igcse">IGCSE</a></li>
-                    <li><a href="index.html#ap">AP</a></li>
-                    <li><a href="index.html#ib">IB</a></li>
-                    <li><a href="index.html#blogs">Blogs</a></li>
-                    <li class="btn-nav"><a href="#" class="btn-primary">ĐĂNG KÝ NGAY</a></li>
+                    <li><a href="ve-cambridge-scout.html">Về chúng tôi</a></li>
+
+                    <li class="has-dropdown">
+                        <a href="#a-level">A-Level</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Toán A-Level</a></li>
+                            <li><a href="#">Lý A-Level</a></li>
+                            <li><a href="#">Hóa A-Level</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-dropdown">
+                        <a href="#igcse">IGCSE</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Toán IGCSE</a></li>
+                            <li><a href="#">Khoa học</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#ap">AP</a></li>
+                    <li><a href="#ib">IB</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
+                    <li><a href="#hoat-dong">Hoạt động</a></li>
+                    <li><a href="#tu-van">Tư vấn</a></li>
+                    <li><a href="#tuyen-dung">Tuyển dụng</a></li>
+                    <li><a href="#tu-van">Đội ngủ giảng dạy</a></li>
+
+                    <li class="btn-nav">
+                        <a href="#" class="btn-primary">ĐĂNG KÝ NGAY</a>
+                    </li>
                 </ul>
             </div>
         </nav>
