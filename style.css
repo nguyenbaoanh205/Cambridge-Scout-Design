@@ -1040,6 +1040,9 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .swiper{
+        padding: 10px 0px;
+    }
     .destination-section .container {
         flex-direction: column;
         text-align: center;
@@ -1050,17 +1053,18 @@ ul {
         flex: 0 0 100%;
         max-width: 100%;
     }
-
-    .destination-logos-wrapper::after {
-        width: 70px;
-    }
-
+    
     .destinationSwiper .swiper-slide {
-        height: 90px;
+        height: auto;
+        width: 57% !important;
     }
 
-    .logo-item img {
-        max-height: 60px;
+    .destination-title {
+        font-size: 1.9rem;
+    }
+
+    .destination-desc {
+        font-size: 0.95rem;
     }
 }
 
