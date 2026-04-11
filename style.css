@@ -744,7 +744,29 @@ ul {
     color: #1a37ae;
     font-size: 0.85rem;
 }
+@media (max-width: 1000px) {
+    .card-content-1{
+        padding: 18px;
+    }
+    .student-info h3 {
+        font-size: 1.7rem;
+        /* width: 100%; */
+    }
 
+    .student-info p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .student-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .student-info p {
+        font-size: 0.65rem;
+    }
+}
 /* Floating Read More Button */
 .btn-read-more {
     position: absolute;
@@ -848,19 +870,6 @@ ul {
     pointer-events: none;
     z-index: 2;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 80%);
-}
-
-/* @media (max-width: 1023px) {
-    .successSwiper::after {
-        width: 60px;
-    }
-} */
-
-@media (max-width: 767px) {
-    .swiper-slide-1 {
-        width: 80% !important;
-        margin-right: -30px !important;
-    }
 }
 
 .successSwiper .swiper-slide {

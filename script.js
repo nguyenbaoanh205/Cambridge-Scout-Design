@@ -112,7 +112,7 @@ var successSwiper = new Swiper(".successSwiper", {
     spaceBetween: 16,
 
     autoplay: {
-        delay: 2500,
+        delay: 42500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
     },
@@ -123,20 +123,41 @@ var successSwiper = new Swiper(".successSwiper", {
     },
 
     breakpoints: {
-        0: {
-            slidesPerView: 1.15,
+        1: {
+            slidesPerView: 1,
             spaceBetween: 12,
         },
-        576: {
-            slidesPerView: 2.2,
+        428: {
+            slidesPerView: 1.5,
             spaceBetween: 14,
         },
-        768: {
-            slidesPerView: 3.2,
+
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 14,
+        },
+        728: {
+            slidesPerView: 2.4,
             spaceBetween: 16,
         },
+
+        800: {
+            slidesPerView: 3,
+            spaceBetween: 16,
+        },
+
+        900: {
+            slidesPerView: 3.1,
+            spaceBetween: 16,
+        },
+
         1024: {
-            slidesPerView: 4.2,
+            slidesPerView: 3.5,
+            spaceBetween: 16,
+        },
+
+        1240: {
+            slidesPerView: 4.5,
             spaceBetween: 16,
         },
         1400: {
