@@ -1497,7 +1497,7 @@ ul {
 
 .footer-links h2::after {
     content: "";
-    width: 120px;
+    width: 100px;
     height: 2px;
     background: #ffffff;
     display: block;
@@ -1800,6 +1800,115 @@ ul {
     color: #E5E7EB;
 }
 
+
+@media (max-width: 1024px) {
+    .about-hero {
+        height: auto;
+        min-height: 520px;
+        padding: 100px 0 80px;
+    }
+
+    .about-hero .hero-inner {
+        padding: 0 32px;
+    }
+
+    .about-hero .hero-content-box {
+        padding: 52px 24px 24px;
+    }
+
+    .about-hero .badge-vcs {
+        top: -12px;
+        font-size: 0.8rem;
+    }
+
+    .about-hero .hero-inner h1,
+    .about-hero .title-more {
+        font-size: 3rem;
+    }
+
+    .about-hero .hero-quote {
+        max-width: 720px;
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        min-height: 460px;
+        padding: 84px 0 64px;
+    }
+
+    .about-hero .hero-inner {
+        padding: 0 20px;
+    }
+
+    .about-hero .hero-content-box {
+        padding: 44px 20px 20px;
+        backdrop-filter: blur(1.5px);
+    }
+
+    .about-hero .badge-vcs {
+        top: -10px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        max-width: calc(100% - 40px);
+        white-space: nowrap;
+    }
+
+    .about-hero .hero-inner h1,
+    .about-hero .title-more {
+        font-size: 2.2rem;
+    }
+
+    .about-hero .title-more {
+        margin-bottom: 20px;
+    }
+
+    .about-hero .hero-quote {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        min-height: 400px;
+        padding: 72px 0 56px;
+    }
+
+    .about-hero .hero-inner {
+        padding: 0 16px;
+    }
+
+    .about-hero .hero-content-box {
+        padding: 18px 16px 16px;
+    }
+
+    .about-hero .badge-vcs {
+        position: static;
+        transform: none;
+        margin-bottom: 16px;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .about-hero .hero-inner h1,
+    .about-hero .title-more {
+        font-size: 1.75rem;
+        line-height: 1.15;
+    }
+
+    .about-hero .title-more {
+        margin-bottom: 16px;
+    }
+
+    .about-hero .hero-quote {
+        font-size: 0.95rem;
+    }
+}
+
+
 /* Intro Section */
 .intro-section {
     background: var(--white);
@@ -1894,7 +2003,7 @@ ul {
 }
 
 .section-title-about {
-    font-size: 1.9rem;
+    font-size: 2.3rem;
     color: #1a37ae;
     margin-bottom: 15px;
 }
@@ -1912,6 +2021,18 @@ ul {
     gap: 24px;
     max-width: 1024px;
     margin: 50px auto 0;
+}
+
+@media (max-width: 768px) {
+    .expert-grid {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .expert-grid {
+        padding: 0 15px;
+    }
 }
 
 .expert-card {
@@ -1984,9 +2105,31 @@ ul {
     text-align: center;
 }
 
+.curriculum-description {
+    width: 53%;
+}
+
+@media (max-width: 1224px) {
+    .curriculum-description {
+        width: 81%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .curriculum-description {
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px) {
     .curriculum-grid {
         grid-template-columns: 1fr;
+    }
+    .section-title-curriculum{
+        font-size: 2rem;
+    }
+    .curriculum-description {
+        width: 86%;
     }
 }
 
@@ -2069,37 +2212,50 @@ ul {
     background: var(--white);
     padding: 25px;
     border-radius: 16px;
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);    text-align: left;
-    transition: border 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: border 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid transparent;
 }
 
 .why-card p {
     font-size: 0.9rem;
+    line-height: 1.7;
 }
 
 .why-card h3 {
-    padding: 10px 0px;
+    padding: 12px 0 8px;
 }
 
 .section-title-why-us {
     text-align: center;
     font-weight: bold;
     font-size: 2.3rem;
-    width: 46%;
+    width: 55%;
     margin: 20px auto;
     color: #191654;
 }
 
 .why-card:hover {
     border-color: var(--accent-blue);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 70, 184, 0.08);
 }
 
 .why-card-item {
-    border-radius: 17%;
-    padding: 16px;
-    width: 16%;
+    width: clamp(56px, 5vw, 72px);
+    aspect-ratio: 1;
+    border-radius: 18px;
+    padding: 14px;
     background: #EFF6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-card-item img {
+    width: 100%;
+    height: auto;
 }
 
 .why-card.wide {
@@ -2132,6 +2288,113 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);    text-align: left;
 
 .why-row-2 .why-card {
     flex: 0 1 calc(33.333% - 10px);
+    max-width: 380px;
+}
+
+@media (max-width: 1024px) {
+    .why-us-section {
+        padding: 40px 0;
+    }
+
+    .section-title-why-us {
+        width: min(100%, 760px);
+        font-size: 2rem;
+        line-height: 1.25;
+        margin: 0 auto 18px;
+    }
+
+    .why-container {
+        gap: 24px;
+        margin: 30px auto 0;
+    }
+
+    .why-row {
+        gap: 24px;
+    }
+
+    .why-row-1 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .why-row-1 .why-card:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .why-row-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .why-row-2 .why-card {
+        flex: initial;
+        max-width: none;
+    }
+
+    .why-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-us-section {
+        padding: 36px 0;
+    }
+
+    .section-title-why-us {
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .why-container {
+        gap: 18px;
+        margin: 24px auto 0;
+    }
+
+    .why-row-1,
+    .why-row-2 {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 18px;
+    }
+
+    .why-row-1 .why-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .why-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .why-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .why-card p {
+        font-size: 0.95rem;
+    }
+
+    .why-card-item {
+        width: 60px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title-why-us {
+        font-size: 1.5rem;
+    }
+
+    .why-card {
+        padding: 18px 16px;
+    }
+
+    .why-card-item {
+        width: 52px;
+        padding: 10px;
+        border-radius: 16px;
+    }
 }
 
 /* Animations */
@@ -2152,9 +2415,7 @@ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);    text-align: left;
 
     .intro-grid,
     .expert-grid,
-    .curriculum-grid,
-    .why-row-1,
-    .why-row-2 {
+    .curriculum-grid {
         grid-template-columns: 1fr !important;
         max-width: 100% !important;
     }
