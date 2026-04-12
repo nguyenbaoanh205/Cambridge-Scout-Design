@@ -2245,10 +2245,10 @@ ul {
 }
 
 .why-card-item {
-    width: clamp(56px, 5vw, 72px);
+    width: 17%;
     aspect-ratio: 1;
-    border-radius: 18px;
-    padding: 14px;
+    border-radius: 22%;
+    padding: 15px;
     background: #EFF6FF;
     display: flex;
     align-items: center;
@@ -2322,6 +2322,10 @@ ul {
         grid-column: 1 / -1;
     }
 
+    .why-row-1 .why-card:nth-child(3) .why-card-item {
+        width: 8%;
+    }
+
     .why-row-2 {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2363,6 +2367,11 @@ ul {
     .why-row-1 .why-card:nth-child(3) {
         grid-column: auto;
     }
+
+    .why-row-1 .why-card:nth-child(3) .why-card-item {
+        width: 15%;
+    }
+
 
     .why-card {
         padding: 20px;
