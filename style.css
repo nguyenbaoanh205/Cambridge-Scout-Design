@@ -2054,6 +2054,11 @@ ul {
 }
 
 /* Why Choose Us Grid */
+.why-us-section {
+    padding: 20px 0;
+    background-color: #F3F4F6;
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2062,23 +2067,39 @@ ul {
 
 .why-card {
     background: var(--white);
-    padding: 30px;
+    padding: 25px;
     border-radius: 16px;
-    box-shadow: var(--shadow-soft);
-    text-align: center;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);    text-align: left;
     transition: border 0.3s;
     border: 1px solid transparent;
+}
+
+.why-card p {
+    font-size: 0.9rem;
+}
+
+.why-card h3 {
+    padding: 10px 0px;
+}
+
+.section-title-why-us {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.3rem;
+    width: 46%;
+    margin: 20px auto;
+    color: #191654;
 }
 
 .why-card:hover {
     border-color: var(--accent-blue);
 }
 
-.why-card i {
-    font-size: 2rem;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-    display: block;
+.why-card-item {
+    border-radius: 17%;
+    padding: 16px;
+    width: 16%;
+    background: #EFF6FF;
 }
 
 .why-card.wide {
@@ -2090,6 +2111,8 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 1200px;
+    margin: 37px auto;
 }
 
 .why-row {
@@ -2108,7 +2131,7 @@ ul {
 }
 
 .why-row-2 .why-card {
-    flex: 0 1 calc(33.333% - 20px);
+    flex: 0 1 calc(33.333% - 10px);
 }
 
 /* Animations */
