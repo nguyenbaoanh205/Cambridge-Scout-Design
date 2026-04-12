@@ -1893,43 +1893,101 @@ ul {
     padding: 60px 0px;
 }
 
+.section-title-about {
+    font-size: 1.9rem;
+    color: #1a37ae;
+    margin-bottom: 15px;
+}
+
+.expert-section-content p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 1.12rem;
+}
+
 .expert-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(2, minmax(280px, 390px));
+    justify-content: center;
+    gap: 24px;
+    max-width: 1024px;
+    margin: 50px auto 0;
 }
 
 .expert-card {
     background: var(--white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    gap: 25px;
-    transition: transform 0.3s ease;
-}
-
-.expert-card:hover {
-    transform: translateY(-10px);
+    padding: 28px 24px;
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 71px 1fr;
+    column-gap: 18px;
+    row-gap: 14px;
+    align-items: start;
+    text-align: left;
 }
 
 .expert-icon {
-    font-size: 2.5rem;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 2.8rem;
+    line-height: 1;
     color: var(--primary-blue);
 }
 
+.expert-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.expert-info {
+    display: contents;
+}
+
 .expert-info h3 {
-    font-size: 1.4rem;
-    color: var(--dark-navy);
-    margin-bottom: 15px;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.9rem;
+    color: #1b1955;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 800;
+    align-self: center;
+}
+
+.expert-card .expert-info p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.75;
 }
 
 /* Curriculum Section */
+.curriculum-section {
+    padding: 60px 0;
+}
+
 .curriculum-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 380px;
     gap: 40px;
+    max-width: 1200px;
+    margin: 25px auto;
+    align-items: center;
+}
+
+.section-title-curriculum {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .curriculum-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-list {
@@ -1941,17 +1999,19 @@ ul {
 .service-item {
     display: flex;
     gap: 20px;
-    background: #fdfdfd;
+    background: #F9FAFB;
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
+    /* border: 1px solid #eee; */
+    /* transition: all 0.3s ease; */
 }
 
-.service-item:hover {
-    background: var(--white);
-    box-shadow: var(--shadow-soft);
-    border-color: var(--primary-blue);
+.service-text strong {
+    font-size: 1.13rem;
+}
+
+.service-text p {
+    color: #4B5563;
 }
 
 .check-icon {
@@ -1969,11 +2029,10 @@ ul {
 }
 
 .support-blue-card {
-    background: linear-gradient(135deg, var(--dark-navy), var(--primary-blue));
+    background: #0032AD;
     color: var(--white);
     padding: 40px;
     border-radius: 24px;
-    box-shadow: var(--shadow-strong);
 }
 
 .support-blue-card h3 {
@@ -1988,6 +2047,10 @@ ul {
     gap: 15px;
     margin-bottom: 20px;
     font-size: 0.95rem;
+}
+
+.fas-pt {
+    padding-top: 8px;
 }
 
 /* Why Choose Us Grid */
